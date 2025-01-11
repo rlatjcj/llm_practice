@@ -6,6 +6,7 @@ from langchain_openai import ChatOpenAI
 from langgraph.graph import END, START, StateGraph
 from node import NewsletterNode
 from state import State
+from utils import save_graph
 
 logger = logging.getLogger(__name__)
 
@@ -43,4 +44,6 @@ def create_newsletter_graph() -> StateGraph:
     workflow.add_edge("edit_newsletter", END)
 
     logger.info("Newsletter graph is created successfully!")
-    return workflow.compile()
+    graph = workflow.compile()
+    save_graph(graph)
+    return graph

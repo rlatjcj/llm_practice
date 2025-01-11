@@ -9,8 +9,13 @@ poetry install
 poetry run streamlit run app.py
 ```
 
+## Graph
+
+![graph](images/graph.png)
+
 ## Page
 
 ![init_page](images/init_page.png)
 
 ![newsletter_page](images/after_run.png)
+
